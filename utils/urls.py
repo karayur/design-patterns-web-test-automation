@@ -1,0 +1,5 @@
+SITE_BASE_URL = "https://pypi.org/"
+SEARCH_PATH = "search/?q="
+DEFAULT_PROJECT_NAME = "selenium"
+MAX_COUNT_PROJECTS_IN_SEARCH_RESULT = 20
+# SEARCH_ORDER_BY_DEFAULT = "&o="
