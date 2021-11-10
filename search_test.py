@@ -1,6 +1,6 @@
 import pytest
 
-from utils.urls import *
+from utils.test_data import *
 from pages.project.project_header import ProjectHeader
 from pages.search.search_projects import Search4Projects
 from pages.search.search_results import SearchResults
@@ -13,7 +13,7 @@ def search4projects(browser):
 
 
 def test_search_returns_projects_list(browser, search4projects):
-    search4projects.search_for_keyword(DEFAULT_PROJECT_NAME)  # using fixture for ARRANGE
+    search4projects.search_for(DEFAULT_PROJECT_NAME)  # using fixture for ARRANGE
 
     projects_count = SearchResults(browser) \
         .get_projects_count()
@@ -24,7 +24,7 @@ def test_search_redirect_to_proper_search_url(browser):
     browser.get(SITE_BASE_URL)  # NOT using fixture for ARRANGE
     search4projects = Search4Projects(browser)
 
-    search4projects.search_for_keyword(DEFAULT_PROJECT_NAME)
+    search4projects.search_for(DEFAULT_PROJECT_NAME)
 
     search_url = browser.current_url
     assert search_url == SITE_BASE_URL + SEARCH_PATH + DEFAULT_PROJECT_NAME
