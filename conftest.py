@@ -10,7 +10,7 @@ from utils.test_data import SITE_BASE_URL
 def browser():
     # s = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    driver.get(SITE_BASE_URL)
+    # driver.get(SITE_BASE_URL)
     yield driver
     driver.quit()
 
