@@ -12,7 +12,6 @@ class Login(UsernamePasswordBase):
 
     def __init__(self, driver):
         super().__init__(driver)
-
         self.password = self.find_element(LOCATOR_PASSWORD)
 
 
