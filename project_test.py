@@ -4,7 +4,6 @@
 
 
 # test_project_description_is_opened_by_default
-# //https://pypi.org/project/bnbad2/
 
 # test_navigate_to_release_history
 

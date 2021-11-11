@@ -2,7 +2,7 @@ import pytest
 
 from pages.login_register import Login
 from pages.login_register import Register
-from utils.test_data import *
+from tests.test_data import *
 
 # login fixture параметризовать ?
 

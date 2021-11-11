@@ -32,13 +32,6 @@ class UsernamePasswordMixin:
     def is_password_masked(self):
         return self.password.is_type_password()
 
-    # def _is_type_password(self, input_web_element):
-    #     input_attr_type_value = input_web_element.get_attribute("type")
-    #     if input_attr_type_value == "password":
-    #         return True
-    #     else:
-    #         return False
-
 
 class Login(BasePage, UsernamePasswordMixin):
 

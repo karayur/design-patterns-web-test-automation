@@ -3,8 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-from utils.test_data import SITE_BASE_URL
-
 
 @pytest.fixture(scope="session")  # TODO clarify if we can use autouse="true" here
 def browser():

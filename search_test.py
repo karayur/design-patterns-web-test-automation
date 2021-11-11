@@ -1,6 +1,6 @@
 import pytest
 
-from utils.test_data import *
+from tests.test_data import *
 from pages.project.project_header import ProjectHeader
 from pages.search.search_projects import Search4Projects
 from pages.search.search_results import SearchResults
