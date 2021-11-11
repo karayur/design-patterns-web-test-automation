@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from pages.controls import CheckBox
+from pages.custom_web_elements import CheckBox, PasswordInputBox
 
 # general locators
 LOCATOR_USERNAME = (By.ID, "username")
@@ -30,14 +30,14 @@ class UsernamePasswordMixin:
         self.show_password_checkbox.toggle()
 
     def is_password_masked(self):
-        return self._is_type_password(self.password)
+        return self.password.is_type_password()
 
-    def _is_type_password(self, input_web_element):
-        input_attr_type_value = input_web_element.get_attribute("type")
-        if input_attr_type_value == "password":
-            return True
-        else:
-            return False
+    # def _is_type_password(self, input_web_element):
+    #     input_attr_type_value = input_web_element.get_attribute("type")
+    #     if input_attr_type_value == "password":
+    #         return True
+    #     else:
+    #         return False
 
 
 class Login(BasePage, UsernamePasswordMixin):
@@ -45,7 +45,7 @@ class Login(BasePage, UsernamePasswordMixin):
     def __init__(self, driver):
         super().__init__(driver)
         self.username = self.find_element(LOCATOR_USERNAME)
-        self.password = self.find_element(LOCATOR_PASSWORD_LOGIN)
+        self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_LOGIN))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.log_in_btn = self.find_element(LOCATOR_LOG_IN_BTN)
 
@@ -55,8 +55,8 @@ class Register(BasePage, UsernamePasswordMixin):
         super().__init__(driver)
         self.name = self.find_element(LOCATOR_PASSWORD_CONFIRM)
         self.email = self.find_element(LOCATOR_PASSWORD_REGISTER)
-        self.password = self.find_element(LOCATOR_PASSWORD_REGISTER)
-        self.confirm_password = self.find_element(LOCATOR_PASSWORD_CONFIRM)
+        self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
+        self.confirm_password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.create_account_btn = self.find_element(LOCATOR_CREATE_ACCOUNT_BTN)
 
@@ -70,4 +70,4 @@ class Register(BasePage, UsernamePasswordMixin):
         self.confirm_password.send_keys(password)
 
     def is_password_confirm_masked(self):
-        return self._is_type_password(self.confirm_password)
+        return self.confirm_password.is_type_password()

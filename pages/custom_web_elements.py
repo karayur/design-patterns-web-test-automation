@@ -16,3 +16,10 @@ class CheckBox(BaseElement):
         return
 
 
+class PasswordInputBox(BaseElement):
+    def is_type_password(self):
+        input_attr_type_value = self.get_attribute("type")
+        if input_attr_type_value == "password":
+            return True
+        else:
+            return False
