@@ -22,15 +22,11 @@ def test_search_open_proper_search_url(browser):
     assert search_url == SITE_BASE_URL + SEARCH_PATH + DEFAULT_PROJECT_NAME
 
 
-@pytest.fixture()
-def search_results(browser):
+def test_search_results_show_relevant_projects(browser):
     browser.get(SITE_BASE_URL + SEARCH_PATH + DEFAULT_PROJECT_NAME)
-    return SearchResults(browser)
+    search_results = SearchResults(browser)
 
-
-def test_open_project_from_search_results(browser, search_results):
     search_results.click_on_first_project()
 
-    project_name = ProjectHeader(browser) \
-        .get_project_name()
-    assert len(project_name.strip()) > 0  # asset project name isn't blank
+    project_name = ProjectHeader(browser).get_project_name()
+    assert DEFAULT_PROJECT_NAME.lower() in project_name.lower()
