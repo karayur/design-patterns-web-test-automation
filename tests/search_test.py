@@ -12,7 +12,7 @@ def search4projects(browser):
     return Search4Projects(browser)
 
 
-def test_search_redirect_to_proper_search_url(browser):
+def test_search_open_proper_search_url(browser):
     browser.get(SITE_BASE_URL)  # NOT using fixture for ARRANGE
     search4projects = Search4Projects(browser)
 

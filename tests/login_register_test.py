@@ -12,7 +12,7 @@ urls = (
 )
 
 
-# -------- Testing Login form
+# --------  Login form testing
 @pytest.fixture()
 def login(browser):
     browser.get(SITE_BASE_URL + LOGIN_PAGE_PATH)
@@ -35,7 +35,7 @@ def test_login_switch_password_visibility(browser, login):
 # def test_login_with_incorrect_username_or_password()
 # ...
 
-# -------- Testing Register form
+# -------- Register form testing
 @pytest.fixture()
 def register(browser):
     browser.get(SITE_BASE_URL + REGISTER_PAGE_PATH)

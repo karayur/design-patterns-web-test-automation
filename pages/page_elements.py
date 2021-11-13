@@ -18,7 +18,6 @@ class CheckBox(BaseElement):
 
     def toggle(self):
         self._web_element.click()
-        return
 
 
 class TextBox(BaseElement):
@@ -32,5 +31,3 @@ class PasswordTextBox(TextBox):
     def is_type_password(self) -> bool:
         input_attr_type_value = self._web_element.get_attribute("type")
         return input_attr_type_value == "password"
-
-
