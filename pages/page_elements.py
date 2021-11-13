@@ -6,6 +6,11 @@ class BaseElement:
         self._web_element = web_element
 
 
+class Button(BaseElement):
+    def click(self):
+        self._web_element.click()
+
+
 class CheckBox(BaseElement):
 
     def is_checked(self):
