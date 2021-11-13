@@ -16,11 +16,16 @@ class CheckBox(BaseElement):
         return
 
 
-class PasswordInputBox(BaseElement):
+class TextBox(BaseElement):
 
-    def is_type_password(self):
+    def enter_text(self, password):
+        self._web_element.send_keys(password)
+
+
+class PasswordTextBox(TextBox):
+
+    def is_type_password(self) -> bool:
         input_attr_type_value = self._web_element.get_attribute("type")
-        if input_attr_type_value == "password":
-            return True
-        else:
-            return False
+        return input_attr_type_value == "password"
+
+

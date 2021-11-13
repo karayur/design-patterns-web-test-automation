@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from pages.page_elements import CheckBox, PasswordInputBox
+from pages.page_elements import CheckBox, PasswordTextBox
+from tests.value_objects import UsernameAndPassword
 
-# general locators
-from tests.test_data import UsernameAndPassword
+# General locators
 
 LOCATOR_USERNAME = (By.ID, "username")
 LOCATOR_SHOW_PASSWORD_CHECKBOX = (By.ID, "show-password")
@@ -26,7 +26,7 @@ class UsernamePasswordMixin:
         self.username.send_keys(username)
 
     def enter_password(self, password):
-        self.password.send_keys(password)
+        self.password.enter_text(password)
 
     def toggle_show_password(self):
         self.show_password_checkbox.toggle()
@@ -40,7 +40,7 @@ class Login(BasePage, UsernamePasswordMixin):
     def __init__(self, driver):
         super().__init__(driver)
         self.username = self.find_element(LOCATOR_USERNAME)
-        self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_LOGIN))
+        self.password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_LOGIN))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.log_in_button = self.find_element(LOCATOR_LOG_IN_BTN)
 
@@ -55,8 +55,8 @@ class Register(BasePage, UsernamePasswordMixin):
         super().__init__(driver)
         self.name = self.find_element(LOCATOR_PASSWORD_CONFIRM)
         self.email = self.find_element(LOCATOR_PASSWORD_REGISTER)
-        self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
-        self.confirm_password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
+        self.password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
+        self.confirm_password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.create_account = self.find_element(LOCATOR_CREATE_ACCOUNT_BTN)
 
@@ -67,7 +67,7 @@ class Register(BasePage, UsernamePasswordMixin):
         self.email.send_keys(email)
 
     def enter_password_confirm(self, password):
-        self.confirm_password.send_keys(password)
+        self.confirm_password.enter_text(password)
 
     def is_confirm_password_masked(self):
         return self.confirm_password.is_type_password()
