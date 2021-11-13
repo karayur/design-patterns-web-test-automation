@@ -62,5 +62,5 @@ class Register(BasePage, UsernamePasswordMixin):
     def enter_password_confirm(self, password):
         self.confirm_password.send_keys(password)
 
-    def is_password_confirm_masked(self):
+    def is_confirm_password_masked(self):
         return self.confirm_password.is_type_password()

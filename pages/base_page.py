@@ -17,7 +17,4 @@ class BasePage:
             .until(EC.presence_of_all_elements_located(locator),
                 message=f"Can't find elements by locator {locator}")
 
-    # def get_element_attribute(self, locator, attribute_name):
-    #     return = WebDriverWait(self.driver, time).until(
-    #         EC.element_to_be_clickable((By.ID, "org"))).get_attribute(
-    #         "attribute_name")
+

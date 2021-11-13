@@ -12,6 +12,6 @@ class SearchResults(BasePage):
 
         return count
 
-    def click_on_first_item(self):
+    def click_on_first_project(self):
         self.find_elements(LOCATOR_SEARCH_RESULTS_ITEMS)[0].click()
 

@@ -20,13 +20,12 @@ def login(browser):
 
 
 def test_login_password_hidden_by_default(browser, login):
-    login.enter_password(DEFAULT_PASSWORD)  # not necessary here
 
     assert login.is_password_masked() is True
 
 
 def test_login_switch_password_visibility(browser, login):
-    login.enter_password(DEFAULT_PASSWORD)  # not necessary here
+
     login.toggle_show_password()
 
     assert login.is_password_masked() is False
@@ -44,17 +43,14 @@ def register(browser):
 
 
 def test_register_password_hidden_by_default(browser, register):
-    register.enter_password(DEFAULT_PASSWORD)  # not so necessary here
-    register.enter_password(DEFAULT_PASSWORD)
 
     assert register.is_password_masked() is True
-    assert register.is_password_confirm_masked() is True
+    assert register.is_confirm_password_masked() is True
 
 
 def test_register_switch_password_visibility(browser, register):
-    register.enter_password(DEFAULT_PASSWORD)  # not so necessary here
-    register.enter_password(DEFAULT_PASSWORD)
+
     register.toggle_show_password()
 
     assert register.is_password_masked() is False
-    assert register.is_password_confirm_masked() is False
+    assert register.is_confirm_password_masked() is False
