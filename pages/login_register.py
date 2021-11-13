@@ -39,8 +39,8 @@ class Login(BasePage, UsernamePasswordMixin):
         super().__init__(driver)
         self.username = self.find_element(LOCATOR_USERNAME)
         self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_LOGIN))
-        self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
-        self.log_in_btn = self.find_element(LOCATOR_LOG_IN_BTN)
+        self.show_password = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
+        self.log_in = self.find_element(LOCATOR_LOG_IN_BTN)
 
 
 class Register(BasePage, UsernamePasswordMixin):
@@ -50,8 +50,8 @@ class Register(BasePage, UsernamePasswordMixin):
         self.email = self.find_element(LOCATOR_PASSWORD_REGISTER)
         self.password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
         self.confirm_password = PasswordInputBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
-        self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
-        self.create_account_btn = self.find_element(LOCATOR_CREATE_ACCOUNT_BTN)
+        self.show_password = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
+        self.create_account = self.find_element(LOCATOR_CREATE_ACCOUNT_BTN)
 
     def enter_name(self, name):
         self.name.send_keys(name)
