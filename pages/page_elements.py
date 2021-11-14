@@ -1,8 +1,8 @@
-from selenium.webdriver.remote.webelement import WebElement
+import selenium.webdriver.remote.webelement
 
 
 class BaseElement:
-    def __init__(self, web_element: WebElement):
+    def __init__(self, web_element: selenium.webdriver.remote.webelement.WebElement):
         self._web_element = web_element
 
 
