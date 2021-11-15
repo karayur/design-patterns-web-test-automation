@@ -2,7 +2,7 @@ from typing import Protocol
 
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-from pages.page_elements import CheckBox, PasswordTextBox, TextBox, Button
+from pages.page_elements import CheckBox, PasswordInput, InputBox, Button
 from tests.value_objects import UsernameAndPassword
 
 # General locators
@@ -36,12 +36,12 @@ class UsernamePasswordShowMixin:
         return self.password.is_type_password()
 
 
-class Login(BasePage, UsernamePasswordShowMixin):
+class LoginPage(BasePage, UsernamePasswordShowMixin):
 
     def __init__(self, driver):
         super().__init__(driver)
         # self.username = TextBox(self.find_element(LOCATOR_USERNAME))
-        self.password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_LOGIN))
+        self.password = PasswordInput(self.find_element(LOCATOR_PASSWORD_LOGIN))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.log_in_button = Button(self.find_element(LOCATOR_LOG_IN_BTN))
 
@@ -51,13 +51,13 @@ class Login(BasePage, UsernamePasswordShowMixin):
         self.log_in_button.click()
 
 
-class Register(BasePage, UsernamePasswordShowMixin):
+class RegisterPage(BasePage, UsernamePasswordShowMixin):
     def __init__(self, driver):
         super().__init__(driver)
-        self.name = TextBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
-        self.email = TextBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
-        self.password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
-        self.confirm_password = PasswordTextBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
+        self.name = InputBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))
+        self.email = InputBox(self.find_element(LOCATOR_PASSWORD_REGISTER))
+        self.password = PasswordInput(self.find_element(LOCATOR_PASSWORD_REGISTER))
+        self.confirm_password = PasswordInput(self.find_element(LOCATOR_PASSWORD_CONFIRM))
         self.show_password_checkbox = CheckBox(self.find_element(LOCATOR_SHOW_PASSWORD_CHECKBOX))
         self.create_account = self.find_element(LOCATOR_CREATE_ACCOUNT_BTN)
 

@@ -1,7 +1,7 @@
 import pytest
 
-from pages.login_register import Login
-from pages.login_register import Register
+from pages.login_register import LoginPage
+from pages.login_register import RegisterPage
 from tests.test_data import *
 
 # login fixture параметризовать ?
@@ -16,7 +16,7 @@ urls = (
 @pytest.fixture()
 def login(browser):
     browser.get(SITE_BASE_URL + LOGIN_PAGE_PATH)
-    return Login(browser)
+    return LoginPage(browser)
 
 
 def test_login_password_hidden_by_default(browser, login):
@@ -39,7 +39,7 @@ def test_login_switch_password_visibility(browser, login):
 @pytest.fixture()
 def register(browser):
     browser.get(SITE_BASE_URL + REGISTER_PAGE_PATH)
-    return Register(browser)
+    return RegisterPage(browser)
 
 
 def test_register_password_hidden_by_default(browser, register):

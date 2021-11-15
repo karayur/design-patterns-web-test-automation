@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 LOCATOR_SEARCH_INPUT = (By.CLASS_NAME, "search-form__search")
 
 
-class Search4Projects(BasePage):
+class SearchProjectsPage(BasePage):
 
     def search_for(self, word):
         search_field = self.find_element(LOCATOR_SEARCH_INPUT)

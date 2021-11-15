@@ -20,13 +20,13 @@ class CheckBox(BaseElement):
         self._web_element.click()
 
 
-class TextBox(BaseElement):
+class InputBox(BaseElement):
 
     def enter_text(self, password):
         self._web_element.send_keys(password)
 
 
-class PasswordTextBox(TextBox):
+class PasswordInput(InputBox):
 
     def is_type_password(self) -> bool:
         input_attr_type_value = self._web_element.get_attribute("type")

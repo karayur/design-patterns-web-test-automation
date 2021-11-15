@@ -7,7 +7,7 @@ LOCATOR_SEARCH_RESULTS_ITEMS = (By.CSS_SELECTOR, "ul[aria-label='Search results'
 LOCATOR_SEARCH_RESULTS_PROJECT_NAMES = (By.CSS_SELECTOR, "li span.package-snippet__name")
 
 
-class SearchResults(BasePage):
+class SearchResultsPage(BasePage):
 
     def get_projects_count(self):
         count = len(self.find_elements(LOCATOR_SEARCH_RESULTS_ITEMS))
