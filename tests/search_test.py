@@ -1,7 +1,6 @@
 import pytest
 
 from tests.test_data import *
-from pages.project.project_header import ProjectHeaderPage
 from pages.search.search_projects import SearchProjectsPage
 from pages.search.search_results import SearchResultsPage
 
@@ -12,21 +11,26 @@ def search_projects(browser):
     return SearchProjectsPage(browser)
 
 
-def test_search_open_proper_search_url(browser):
-    browser.get(SITE_BASE_URL)  # NOT using fixture for ARRANGE
-    search_for_projects = SearchProjectsPage(browser)
+def test_search_opens_proper_search_url(browser, search_projects):
 
-    search_for_projects.search_for(DEFAULT_PROJECT_NAME)
+    search_url = search_projects.search_for(DEFAULT_PROJECT_NAME).current_url
 
-    search_url = browser.current_url
     assert search_url == SITE_BASE_URL + SEARCH_PATH + DEFAULT_PROJECT_NAME
 
 
-def test_search_results_show_relevant_projects(browser):
+@pytest.fixture()
+def search_results(browser):
     browser.get(SITE_BASE_URL + SEARCH_PATH + DEFAULT_PROJECT_NAME)
-    search_results = SearchResultsPage(browser)
+    return SearchResultsPage(browser)
 
-    search_results.click_on_first_project()
 
-    project_name = ProjectHeaderPage(browser).get_project_name()
+def test_search_results_have_relevant_project_info(browser, search_results):
+
+    project_name = search_results.get_first_project_name()
+    project_url = search_results.get_first_project_url()
     assert DEFAULT_PROJECT_NAME.lower() in project_name.lower()
+    assert project_url == SITE_BASE_URL + PROJECT_PATH + DEFAULT_PROJECT_NAME + "/"
+
+# See test_project_url_opens_proper_project_page in project_test
+
+

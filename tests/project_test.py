@@ -1,12 +1,12 @@
+import pytest
+
+from tests.test_data import *
+from pages.project.project_header import ProjectHeaderPage
 
 
-# fixtures to open project page
+def test_project_url_opens_proper_project_page(browser):
+    browser.get(SITE_BASE_URL + PROJECT_PATH + DEFAULT_PROJECT_NAME)
+    project_header = ProjectHeaderPage(browser)
 
-
-# test_project_description_is_opened_by_default
-
-# test_navigate_to_release_history
-
-# test_navigate_to_description
-
-# test_navigate_to_download_files
+    project_name = project_header.get_project_name()
+    assert project_name.startswith(DEFAULT_PROJECT_NAME)

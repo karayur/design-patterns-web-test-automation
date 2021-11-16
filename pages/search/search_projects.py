@@ -10,7 +10,7 @@ class SearchProjectsPage(BasePage):
     def search_for(self, word):
         search_field = self.find_element(LOCATOR_SEARCH_INPUT)
         search_field.send_keys(word + Keys.RETURN)
-        return search_field
+        return self.driver
 
 
 
