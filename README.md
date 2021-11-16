@@ -102,3 +102,42 @@ Here example with mixin:
   
 https://github.com/karayur/design-patterns-web-test-automation/blob/main/pages/login_register.py
 
+## the same mixins and structual subtyping using Protocol 
+  
+https://mypy.readthedocs.io/en/latest/more_types.html#mixin-classes
+
+See eaxample (WIP)
+https://github.com/karayur/design-patterns-web-test-automation/blob/main/pages/user_password_show_mixin.py  
+
+# Page Element object pattern
+
+## Overview
+   
+[Design patterns in test automation (in Russian)](https://habr.com/ru/company/jugru/blog/338836/)
+
+  
+## Examples
+  
+https://github.com/karayur/design-patterns-web-test-automation/blob/main/pages/page_elements.py
+  
+  
+# Keeping ARRANGE phase in pytest fictures 
+  
+## Overview
+
+   _assert или exception в фикстуре приводит к ошибке (ERROR), в то время как assert или exception в тестовой функции приводит к ошибке (FAIL)._ 
+  
+https://habr.com/ru/post/448786/
+  
+## Example
+  
+Example with fixture
+ 
+  https://github.com/karayur/design-patterns-web-test-automation/blob/main/tests/search_test.py
+  
+Example without fixture
+
+  https://github.com/karayur/design-patterns-web-test-automation/blob/main/tests/project_test.py
+  
+  
+  
