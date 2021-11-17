@@ -121,7 +121,7 @@ https://github.com/karayur/design-patterns-web-test-automation/blob/main/pages/u
 https://github.com/karayur/design-patterns-web-test-automation/blob/main/pages/page_elements.py
   
   
-# Keeping ARRANGE phase in pytest fictures 
+# Keeping ARRANGE phase in pytest fixtures 
   
 ## Overview
 
