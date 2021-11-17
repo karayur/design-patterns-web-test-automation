@@ -8,7 +8,7 @@ Some notes and disclaimers:
 * As we know there is no such thing as a good design pattern or a bad design pattern. Each design pattern is created to address a specific problem or situation in development. If you don’t have such a problem do not use a pattern. Even though it is really cool.
 * You might not need most of these patterns in end-to-end test automation. Even if you have a quite big system you better concentrate on unit and integration levels of [testing pyramid](url) (if it is possible). In this case the end-to-end test automation pack and framework is gonna be lightweight. 
 
-
+See details on wiki pages:
  * [Automated atomic tests approach](https://github.com/karayur/design-patterns-web-test-automation/wiki/Automated-atomic-tests-approach) 
  * [Page object pattern](https://github.com/karayur/design-patterns-web-test-automation/wiki/Page-element-pattern)
     * page objects modules structure
@@ -17,5 +17,4 @@ Some notes and disclaimers:
  * [Page element pattern (WIP)](https://github.com/karayur/design-patterns-web-test-automation/wiki/Page-element-pattern)
  * [Value Object pattern (WIP)](https://github.com/karayur/design-patterns-web-test-automation/wiki/Value-Object-pattern)
  * [Pytest fixtures and ARRANGE step in tests (WIP)](https://github.com/karayur/design-patterns-web-test-automation/wiki/Pytest-fixtures-and-ARRANGE--step-in-tests)
-  
   
