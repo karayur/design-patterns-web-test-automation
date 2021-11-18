@@ -10,7 +10,7 @@ Some notes and disclaimers:
 
 See details on wiki pages:
  * [Automated atomic tests approach](https://github.com/karayur/design-patterns-web-test-automation/wiki/Automated-atomic-tests-approach) 
- * [Page object pattern](https://github.com/karayur/design-patterns-web-test-automation/wiki/Page-element-pattern)
+ * [Page object pattern](https://github.com/karayur/design-patterns-web-test-automation/wiki/Page-object-pattern)
     * page objects modules structure
     * mixins to page objects 
     * mixins and structual subtyping using Protocol (WIP)
