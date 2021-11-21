@@ -5,6 +5,7 @@ from pages.project.project_header import ProjectHeaderPage
 
 
 def test_project_url_opens_proper_project_page(browser):
+    # ARRANGE without fixture example
     browser.get(SITE_BASE_URL + PROJECT_PATH + DEFAULT_PROJECT_NAME)
     project_header = ProjectHeaderPage(browser)
 

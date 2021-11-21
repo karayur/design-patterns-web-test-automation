@@ -21,7 +21,7 @@ LOCATOR_PASSWORD_CONFIRM = (By.ID, "password_confirm")
 LOCATOR_CREATE_ACCOUNT_BTN = (By.CSS_SELECTOR, 'input[data-target="password-match.submit"]')
 
 
-class UsernamePasswordShowMixin:
+class LoginFieldsMethodsMixin:
 
     def enter_username(self, username):
         self.username.enter_text(username)
@@ -36,7 +36,7 @@ class UsernamePasswordShowMixin:
         return self.password.is_type_password()
 
 
-class LoginPage(BasePage, UsernamePasswordShowMixin):
+class LoginPage(BasePage, LoginFieldsMethodsMixin):
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -51,7 +51,7 @@ class LoginPage(BasePage, UsernamePasswordShowMixin):
         self.log_in_button.click()
 
 
-class RegisterPage(BasePage, UsernamePasswordShowMixin):
+class RegisterPage(BasePage, LoginFieldsMethodsMixin):
     def __init__(self, driver):
         super().__init__(driver)
         self.name = InputBox(self.find_element(LOCATOR_PASSWORD_CONFIRM))

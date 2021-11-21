@@ -5,7 +5,7 @@
 # https://stackoverflow.com/questions/51930339/how-do-i-correctly-add-type-hints-to-mixin-classes
 
 #
-# class HasUsernamePasswordShow(Protocol):
+# class HasLoginFields(Protocol):
 #     @property
 #     def username(self) -> TextBox: ...
 #
@@ -16,7 +16,7 @@
 #     def show_password_checkbox(self) -> CheckBox: ...
 
 
-# class UsernamePasswordShowMixin:
+# class LoginFieldsMethodsMixin:
 #
 #     def enter_username(self: HasUsernamePasswordShow, username):
 #         self.username.enter_text(username)

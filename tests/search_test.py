@@ -31,6 +31,6 @@ def test_search_results_have_relevant_project_info(browser, search_results):
     assert DEFAULT_PROJECT_NAME.lower() in project_name.lower()
     assert project_url == SITE_BASE_URL + PROJECT_PATH + DEFAULT_PROJECT_NAME + "/"
 
-# See test_project_url_opens_proper_project_page in project_test
+# See test_project_url_opens_proper_project_page in project_test.py
 
 
