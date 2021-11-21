@@ -18,14 +18,14 @@
 
 # class LoginFieldsMethodsMixin:
 #
-#     def enter_username(self: HasUsernamePasswordShow, username):
+#     def enter_username(self: HasLoginFields, username):
 #         self.username.enter_text(username)
 #
-#     def enter_password(self: HasUsernamePasswordShow, password):
+#     def enter_password(self: HasLoginFields, password):
 #         self.password.enter_text(password)
 #
-#     def toggle_show_password(self: HasUsernamePasswordShow):
+#     def toggle_show_password(self: HasLoginFields):
 #         self.show_password_checkbox.toggle()
 #
-#     def is_password_masked(self: HasUsernamePasswordShow):
+#     def is_password_masked(self: HasLoginFields):
 #         return self.password.is_type_password()

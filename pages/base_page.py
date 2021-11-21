@@ -19,3 +19,13 @@ class BasePage:
         return WebDriverWait(self.driver, time) \
             .until(EC.presence_of_all_elements_located(locator),
                    message=f"Can't find elements by locator {locator}")
+
+    # def wait_for_ajax(self, time=10):
+    #   WebDriverWait(self.driver, time=10) \
+    #       .until(lambda d: d.execute_script("return jQuery.active == 0"))
+
+    # def wait_until_page_loads_completely(self, time=10):
+    #   WebDriverWait(driver, time=10) \
+    #       .until(lambda driver: driver.execute_script('return document.readyState') == 'complete')
+
+    # self.driver.delete_all_cookies()
