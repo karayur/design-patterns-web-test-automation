@@ -1,12 +1,12 @@
 **Design patterns, idioms, principles with web test automation examples in Python.**
 
+The idea is to have popular patterns gathered not as standalone python code examples but all integrated in one project that is really testing some webui.
+
 Inspired by 
 * [python-patterns](https://github.com/faif/python-patterns) 
 * [Design Patterns for High-Quality Automated Tests: High-Quality Test Attributes and Best Practices](https://www.amazon.com/gp/product/B085L9W1KH/ref=ppx_yo_dt_b_d_asin_title_o00?ie=UTF8&psc=1)
 * [Design patterns in test automation (in Russian)](https://habr.com/ru/company/jugru/blog/338836/)
 
-
-The idea is to have popular patterns gathered not as standalone python code examples but all integrated in one project that is really testing some webui.
 
 Some notes and disclaimers:
 * This doc and code examples were created as a part of my Python test automation learning project and it reflects my personal experience only (which isn’t very significant in Python though)
